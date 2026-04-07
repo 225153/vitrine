@@ -1,0 +1,79 @@
+@use 'app/variables' as *;
+@import '@angular/material/prebuilt-themes/azure-blue.css';
+
+// CSS custom properties for Material and Bootstrap
+:root {
+  --bs-primary: #3B82F6;
+  --bs-body-font-family: 'DM Sans', sans-serif;
+  --bs-body-color: #FFFFFF;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: $font-body;
+  background-color: $color-bg-primary;
+  color: $color-text;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $color-bg-primary;
+  color: $color-text;
+  font-family: $font-body;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-heading;
+  font-weight: 700;
+  color: $color-text;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s;
+  &:hover {
+    color: $color-accent;
+  }
+}
+
+p, .text-muted {
+  color: $color-text-muted !important;
+  line-height: 1.6;
+}
+
+// Force Material Buttons to inherit color
+.mat-mdc-button, .mat-mdc-icon-button {
+  --mdc-text-button-label-text-color: inherit;
+  --mdc-icon-button-icon-color: inherit;
+}
+
+// Global button shimmer effect
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transform: skewX(-20deg);
+  }
+  
+  &:hover::after {
+    left: 150%;
+    transition: 0.8s;
+  }
+}
+
+// Global classes
+.section-spacing {
+  padding: 100px 0;
+}

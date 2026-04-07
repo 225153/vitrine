@@ -1,0 +1,66 @@
+@use '../variables' as *;
+
+.bg-dark-alt {
+  background-color: $color-bg-secondary;
+}
+
+h2 {
+  font-family: $font-heading;
+  letter-spacing: -1px;
+}
+
+.service-card {
+  background-color: $color-bg-primary;
+  border-radius: 16px !important;
+  color: $color-text !important;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  position: relative;
+  overflow: visible;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 2px;
+    background: linear-gradient(135deg, rgba($color-accent, 0.5), transparent);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .icon-wrapper {
+    width: 80px;
+    height: 80px;
+    transition: all 0.3s;
+    
+    mat-icon {
+      font-size: 36px;
+      height: 36px;
+      width: 36px;
+    }
+  }
+
+  mat-card-title {
+    color: $color-text !important;
+    font-family: $font-body;
+  }
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba($color-accent, 0.3) !important;
+    
+    &::before {
+      opacity: 1;
+    }
+
+    .icon-wrapper {
+      background-color: $color-accent !important;
+      color: white !important;
+      transform: scale(1.1);
+    }
+  }
+}

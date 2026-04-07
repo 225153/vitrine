@@ -1,0 +1,41 @@
+<section id="testimonials" class="section-spacing bg-dark-alt text-center">
+  <div class="container" data-aos="fade-up">
+    <span class="text-primary fw-bold text-uppercase tracking-wider small">Ce Qu'Ils Disent</span>
+    <h2 class="display-5 fw-bold text-white mt-2 mb-5">Témoignages Clients</h2>
+
+    <div class="row justify-content-center position-relative">
+      <div class="col-lg-8 position-relative z-1">
+        <mat-card class="bg-card text-white border-0 shadow-lg mx-auto p-4 rounded-4" style="max-width: 800px;">
+          <mat-icon class="quote-icon text-primary position-absolute opacity-25">format_quote</mat-icon>
+          <mat-card-content class="position-relative z-2">
+            <p class="fs-4 fst-italic mb-5 text-light testimonial-text">"{{ testimonials[currentIndex].text }}"</p>
+            <div class="d-flex align-items-center justify-content-center">
+              <img [src]="testimonials[currentIndex].avatar" alt="Avatar" class="rounded-circle border border-2 border-primary me-3 shadow-sm" width="64" height="64">
+              <div class="text-start">
+                <h5 class="mb-0 fw-bold">{{ testimonials[currentIndex].name }}</h5>
+                <small class="text-muted text-uppercase tracking-wide">{{ testimonials[currentIndex].role }}</small>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+
+        <div class="d-flex justify-content-center align-items-center mt-5 gap-4">
+          <button mat-mini-fab color="primary" (click)="prev()" class="nav-arrow shadow-sm">
+            <mat-icon>chevron_left</mat-icon>
+          </button>
+
+          <div class="d-flex gap-2 mx-3">
+            <span *ngFor="let t of testimonials; let i = index"
+                  class="dot rounded-circle cursor-pointer"
+                  [class.active]="i === currentIndex"
+                  (click)="setIndex(i)"></span>
+          </div>
+
+          <button mat-mini-fab color="primary" (click)="next()" class="nav-arrow shadow-sm">
+            <mat-icon>chevron_right</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

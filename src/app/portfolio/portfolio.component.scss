@@ -1,0 +1,89 @@
+@use '../variables' as *;
+
+.bg-dark-alt {
+  background-color: $color-bg-primary; // Using primary here for alternating stripes
+}
+
+h2 {
+  font-family: $font-heading;
+}
+
+.tracking-wider {
+  letter-spacing: 2px;
+}
+
+.portfolio-item {
+  border-radius: 16px;
+  cursor: pointer;
+  overflow: hidden;
+  height: 350px;
+  
+  .item-img {
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .portfolio-overlay {
+    background: linear-gradient(to top, rgba(10, 15, 30, 0.9) 0%, rgba(10, 15, 30, 0.4) 100%);
+    opacity: 0;
+    visibility: hidden;
+    backdrop-filter: blur(5px);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    .category {
+      transform: translateY(-20px);
+      opacity: 0;
+      transition: all 0.4s 0.1s;
+    }
+    
+    .title {
+      font-family: $font-heading;
+      transform: translateY(-20px);
+      opacity: 0;
+      transition: all 0.4s 0.2s;
+      font-size: 2rem;
+    }
+
+    button {
+      transform: scale(0.5);
+      opacity: 0;
+      transition: all 0.5s 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6) !important;
+
+    .item-img {
+      transform: scale(1.1);
+    }
+
+    .portfolio-overlay {
+      opacity: 1;
+      visibility: visible;
+
+      .category, .title {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      button {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.btn-outline-glass {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  color: $color-text !important;
+  transition: all 0.3s;
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+}

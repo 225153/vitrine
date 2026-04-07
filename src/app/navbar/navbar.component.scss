@@ -1,0 +1,91 @@
+@use '../variables' as *;
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  background-color: transparent !important;
+  color: $color-text !important;
+
+  &.glass {
+    @include glass-effect;
+  }
+
+  .logo-container {
+    cursor: pointer;
+    .logo {
+      font-family: $font-heading;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+    }
+  }
+
+  .nav-links {
+    button {
+      font-family: $font-body;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: color 0.3s ease;
+      color: $color-text !important;
+      
+      &:hover {
+        color: $color-accent !important;
+      }
+    }
+
+    // Fix for the primary (Contact) button specifically
+    button[color="primary"], .mat-mdc-raised-button.mat-primary {
+      color: #FFFFFF !important;
+      background-color: $color-accent !important;
+      --mdc-filled-button-label-text-color: #FFFFFF !important;
+      --mdc-protected-button-label-text-color: #FFFFFF !important;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+      
+      .mdc-button__label {
+        color: #FFFFFF !important;
+      }
+
+      &:hover {
+        transform: translateY(-3px) scale(1.05) !important;
+        box-shadow: 0 8px 25px rgba($color-accent, 0.5) !important;
+        background-color: lighten($color-accent, 5%) !important;
+      }
+
+      &:active {
+        transform: translateY(-1px) scale(1) !important;
+      }
+    }
+  }
+
+  button.mat-icon-button {
+    color: $color-text !important;
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 64px);
+  z-index: 999;
+  background-color: rgba($color-bg-primary, 0.95);
+  backdrop-filter: blur(15px);
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  
+  button {
+    font-family: $font-body;
+    color: $color-text !important;
+    transition: all 0.3s;
+    
+    &:hover {
+      color: $color-accent !important;
+      background-color: rgba(255,255,255,0.05);
+    }
+  }
+}

@@ -1,0 +1,24 @@
+$color-bg-primary: #0A0F1E;
+$color-bg-secondary: #161D32;
+$color-accent: #3B82F6;
+$color-text: #FFFFFF;
+$color-text-muted: #A0AEC0;
+$color-shadow: rgba(0, 0, 0, 0.5);
+
+$font-heading: 'Playfair Display', serif;
+$font-body: 'DM Sans', sans-serif;
+
+@mixin glass-effect {
+  background: rgba(10, 15, 30, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@mixin hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px $color-shadow, 0 0 15px rgba($color-accent, 0.3);
+  }
+}

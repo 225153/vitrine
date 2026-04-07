@@ -1,0 +1,38 @@
+<section id="about" class="section-spacing d-flex align-items-center">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <!-- Left Column: Content + Stats -->
+      <div class="col-lg-6" data-aos="fade-right">
+        <h2 class="display-5 fw-bold mb-4">
+          Une expertise forgée par <span class="text-primary">l'innovation</span>
+        </h2>
+        <p class="lead text-muted mb-4 pe-md-5">
+          Nous accompagnons les entreprises dans leur transformation digitale pour leur garantir une présence en ligne forte et remarquable. Alliant design premium et technologie de pointe.
+        </p>
+
+        <div class="row pt-4 border-top border-secondary border-opacity-25 mt-5">
+          <div class="col-4" *ngFor="let stat of stats">
+            <h3 class="display-4 fw-bold text-white mb-0">{{ stat.current }}+</h3>
+            <p class="text-muted text-uppercase tracking-wider mt-2 small">{{ stat.label }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Image with frame -->
+      <div class="col-lg-6 position-relative d-none d-md-block" data-aos="fade-left" data-aos-delay="200">
+        <div class="img-wrapper rounded position-relative">
+          <div class="frame-border position-absolute border border-3 border-primary rounded"></div>
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Notre équipe au travail" class="img-fluid rounded shadow-lg position-relative z-1" style="object-fit: cover; height: 500px; width: 100%;">
+          
+          <div class="glass-card position-absolute bottom-0 start-0 z-2 bg-dark p-4 rounded text-white shadow" style="transform: translate(-10%, 20%); max-width: 250px;">
+            <div class="d-flex align-items-center mb-2">
+              <span class="fs-1 fw-bold text-primary me-2">10</span>
+              <span class="fw-semibold lh-sm">Ans d'<br>Expertise</span>
+            </div>
+            <p class="mb-0 text-muted small">Reconnus pour notre fiabilité et notre excellence technique.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

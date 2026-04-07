@@ -1,0 +1,36 @@
+<section id="hero" class="hero-section d-flex align-items-center position-relative overflow-hidden" [@staggeredFadeIn]>
+  <!-- Animated Background Shapes -->
+  <div class="shape shape-1"></div>
+  <div class="shape shape-2"></div>
+  <div class="shape shape-3"></div>
+
+  <div class="container position-relative z-1 text-center mt-5 pt-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 col-xl-8">
+        <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill mb-4 hero-anim fw-medium">
+          Excellence Digitale
+        </span>
+        <h1 class="display-3 fw-bold mb-4 hero-title hero-anim">
+          Donnez vie à vos projets <span class="text-primary">innovants</span>
+        </h1>
+        <p class="lead mb-5 hero-subtitle hero-anim text-muted mx-auto" style="max-width: 600px;">
+          Nous concevons des expériences web modernes, performantes et axées sur l'utilisateur. Transformez votre vision en une réalité percutante et premium.
+        </p>
+        <div class="hero-actions d-flex gap-3 justify-content-center flex-wrap hero-anim">
+          <button mat-raised-button color="primary" class="btn-shimmer px-4 py-3 fs-5 rounded-pill shadow-lg" (click)="scrollTo('portfolio')">
+            Voir nos réalisations
+            <mat-icon class="ms-2">arrow_forward</mat-icon>
+          </button>
+          <button mat-stroked-button color="accent" class="btn-outline-glass px-4 py-3 fs-5 rounded-pill" (click)="scrollTo('contact')">
+            Demander un devis
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="scroll-indicator d-none d-md-flex flex-column align-items-center position-absolute bottom-0 start-50 translate-middle-x mb-4 z-1 hero-anim" (click)="scrollTo('about')">
+    <span class="text-muted small mb-2 text-uppercase tracking-wide">Découvrir</span>
+    <mat-icon class="animate-bounce">keyboard_arrow_down</mat-icon>
+  </div>
+</section>

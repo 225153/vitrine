@@ -1,0 +1,11 @@
+[build]
+  command = "npm run build"
+  publish = "dist/vitrine/browser" # Chemin de dossier par défaut pour Angular 17+ ("application" builder)
+
+[[redirects]]
+  # Toutes les routes qui ne sont pas des fichiers redirigent vers index.html
+  # Essentiel pour une Single Page Application (SPA) Angular pour éviter l'erreur 404 lors d'un rafraîchissement direct de la page
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = true

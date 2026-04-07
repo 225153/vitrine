@@ -1,0 +1,28 @@
+<section id="services" class="section-spacing bg-dark-alt">
+  <div class="container text-center mb-5" data-aos="fade-up">
+    <h2 class="display-5 fw-bold text-white mb-3">Nos Services</h2>
+    <p class="lead text-muted mx-auto" style="max-width: 650px;">
+      Nous offrons une gamme complète de solutions digitales pour faire briller votre entreprise dans ce monde connecté.
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" *ngFor="let service of services; let index = index" data-aos="fade-up" [attr.data-aos-delay]="100 * (index + 1)">
+        <mat-card class="h-100 service-card text-center border-0 mat-elevation-z3" matRipple>
+          <div class="d-flex justify-content-center align-items-center mb-3">
+            <div class="icon-wrapper d-flex justify-content-center align-items-center rounded-circle bg-primary bg-opacity-10 text-primary mt-4">
+              <mat-icon>{{ service.icon }}</mat-icon>
+            </div>
+          </div>
+          <mat-card-header class="d-flex justify-content-center">
+            <mat-card-title class="fw-bold fs-4 mb-3">{{ service.title }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p class="text-muted mb-4">{{ service.description }}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</section>

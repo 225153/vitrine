@@ -1,0 +1,45 @@
+@use '../variables' as *;
+
+#about {
+  background-color: $color-bg-primary;
+  overflow: hidden;
+
+  h2 {
+    font-family: $font-heading;
+    line-height: 1.2;
+  }
+
+  .tracking-wider {
+    letter-spacing: 0.1em;
+  }
+
+  .img-wrapper {
+    position: relative;
+    z-index: 10;
+    
+    .frame-border {
+      top: -20px;
+      right: -20px;
+      width: 100%;
+      height: 100%;
+      border-color: $color-accent !important;
+      z-index: 0;
+      opacity: 0.8;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    &:hover .frame-border {
+      transform: translate(-10px, 10px);
+    }
+
+    img {
+      border-radius: 12px;
+    }
+
+    .glass-card {
+      @include glass-effect;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+    }
+  }
+}

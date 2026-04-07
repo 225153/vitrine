@@ -1,0 +1,81 @@
+@use '../variables' as *;
+
+.bg-dark-deep {
+  background-color: #060912;
+}
+
+.footer {
+  .logo {
+    font-family: $font-heading;
+    letter-spacing: 1px;
+    font-size: 1.8rem;
+  }
+
+  .tracking-wide {
+    letter-spacing: 1.5px;
+  }
+
+  p {
+    line-height: 1.8;
+  }
+
+  .footer-links {
+    a {
+      color: rgba($color-text, 0.6);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+      display: inline-block;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        background-color: $color-accent;
+        transition: width 0.3s ease;
+      }
+
+      &:hover {
+        color: $color-text;
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    &:hover {
+      background-color: $color-accent;
+      color: $color-text;
+      border-color: $color-accent;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba($color-accent, 0.4);
+    }
+    
+    i {
+      font-size: 20px;
+    }
+  }
+
+  .form-control {
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
+    &:focus {
+      box-shadow: none;
+      border-color: $color-accent;
+    }
+  }
+}

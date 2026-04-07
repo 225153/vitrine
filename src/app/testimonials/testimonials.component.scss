@@ -1,0 +1,79 @@
+@use '../variables' as *;
+
+.bg-dark-alt {
+  background-color: $color-bg-secondary;
+}
+
+h2 {
+  font-family: $font-heading;
+}
+
+.tracking-wider {
+  letter-spacing: 2px;
+}
+
+.bg-card {
+  background-color: $color-bg-primary;
+  position: relative;
+  overflow: visible;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 18px;
+    z-index: -1;
+    background: linear-gradient(135deg, rgba($color-accent, 0.4), transparent 60%);
+  }
+
+  .quote-icon {
+    font-size: 15rem;
+    height: 15rem;
+    width: 15rem;
+    top: -50px;
+    left: -50px;
+    transform: rotate(180deg);
+  }
+
+  .testimonial-text {
+    line-height: 1.8;
+  }
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: rgba($color-text, 0.2);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+
+  &.active {
+    background-color: $color-accent;
+    transform: scale(1.4);
+    box-shadow: 0 0 10px rgba($color-accent, 0.5);
+  }
+
+  &:hover:not(.active) {
+    background-color: rgba($color-text, 0.5);
+    transform: scale(1.1);
+  }
+}
+
+.nav-arrow {
+  background-color: transparent !important;
+  color: $color-text !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  transition: all 0.3s ease !important;
+
+  &:hover {
+    background-color: $color-accent !important;
+    border-color: $color-accent !important;
+    color: white !important;
+    transform: scale(1.1) translateY(-2px);
+    box-shadow: 0 8px 20px rgba($color-accent, 0.4) !important;
+
+    // Fix inherit color on hover
+    --mdc-fab-icon-color: white !important;
+    mat-icon { color: white !important; }
+  }
+}

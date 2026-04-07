@@ -1,0 +1,117 @@
+@use '../variables' as *;
+
+#contact {
+  background-color: $color-bg-primary;
+  
+  h2 {
+    font-family: $font-heading;
+    letter-spacing: -1px;
+  }
+}
+
+.tracking-wider {
+  letter-spacing: 2px;
+}
+
+.bg-card {
+  background-color: #111827 !important;
+  transition: all 0.3s ease;
+  &:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important;
+  }
+}
+
+::ng-deep .dark-theme.mat-mdc-form-field {
+  .mdc-notched-outline {
+    border-color: rgba(255, 255, 255, 0.2) !important;
+  }
+  .mdc-notched-outline__leading,
+  .mdc-notched-outline__notch,
+  .mdc-notched-outline__trailing {
+    border-color: rgba(255, 255, 255, 0.2) !important;
+  }
+  
+  &:hover .mdc-notched-outline__leading,
+  &:hover .mdc-notched-outline__notch,
+  &:hover .mdc-notched-outline__trailing {
+    border-color: rgba(255, 255, 255, 0.4) !important;
+  }
+
+  &.mat-focused .mdc-notched-outline__leading,
+  &.mat-focused .mdc-notched-outline__notch,
+  &.mat-focused .mdc-notched-outline__trailing {
+    border-color: $color-accent !important;
+    border-width: 2px;
+  }
+
+  .mat-mdc-form-field-label {
+    color: rgba(255, 255, 255, 0.6) !important;
+  }
+  
+  &.mat-focused .mat-mdc-form-field-label {
+    color: $color-accent !important;
+  }
+
+  .mat-mdc-input-element,
+  textarea {
+    color: white !important;
+    font-family: $font-body;
+  }
+
+  .mat-mdc-form-field-error {
+    color: #ff5252 !important;
+  }
+}
+
+// Add specifically for the Send button to display correctly
+button.send-btn {
+  color: #FFFFFF !important;
+  background-color: $color-accent !important;
+  --mdc-filled-button-label-text-color: #FFFFFF !important;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 50rem !important;
+  min-width: 250px;
+
+  .mdc-button__label {
+    color: #FFFFFF !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  mat-icon {
+    transition: transform 0.3s ease;
+  }
+  
+  &:hover:not([disabled]) {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba($color-accent, 0.5) !important;
+
+    mat-icon {
+      transform: translateX(5px) scale(1.1);
+    }
+  }
+  
+  &[disabled] {
+    opacity: 0.6;
+    background-color: rgba($color-text-muted, 0.2) !important;
+    color: rgba($color-text, 0.5) !important;
+    --mdc-filled-button-label-text-color: rgba($color-text, 0.5) !important;
+    box-shadow: none !important;
+  }
+}
+
+.map-placeholder {
+  .grayscale {
+    filter: grayscale(100%);
+  }
+  .object-fit-cover {
+    object-fit: cover;
+  }
+  transition: all 0.5s ease;
+  &:hover .grayscale {
+    filter: grayscale(0%);
+    opacity: 0.5;
+  }
+}
